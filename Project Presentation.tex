@@ -1,0 +1,585 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\def\re{{\mathbf {Re\,}}}
+\def\im{{\mathbf {Im\,}}}
+
+\newcommand{\imat}{\sqrt{-1}}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\db}{\overline\partial}
+\newcommand{\ov}{\overline}
+\newcommand{\wi}{\widetilde}
+%------------------------------MathOperators-----------------------
+\DeclareMathOperator{\ric}{Ric}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Dom}{Dom}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\Span}{Span}
+%------------------------------Mathscr-------------------------------------
+\newcommand{\cali}[1]{\mathscr{#1}}
+\newcommand{\cO}{\cali{O}} \newcommand{\cI}{\cali{I}}
+\newcommand{\cM}{\cali{M}}\newcommand{\cT}{\cali{T}}
+\newcommand{\cC}{\cali{C}}\newcommand{\cA}{\cali{A}}
+%------------------------------Field-------------------------------------
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\Z}{\field{Z}}
+\newcommand{\R}{\field{R}}
+\newcommand{\C}{\field{C}}
+\newcommand{\N}{\field{N}}
+\newcommand{\T}{\field{T}}
+\newcommand{\Q}{\field{Q}}
+%------------------------------Misc-------------------------------------
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\mO}{\mathcal{O}}
+\newcommand{\Cdp}{\C^{d_p}}
+\newcommand{\hp}{H^0_{(2)}(X,L_p)}
+\newcommand{\eq}{{\rm eq}}
+\newcommand{\FS}{{{_\mathrm{FS}}}}
+
+\newcommand{\comment}[1]{}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+\title[University of Michigan - Ann Arbor]{Predicting success rates of Space X rockets} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\title[Predicting Success Rates of Space X Rockets]{Predicting Success Rates of Space X Rockets} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{James J. Heffers} % Your name
+\institute[U(M)]
+{
+University of Michigan - Ann Arbor\\ % Your institution for the title page
+\medskip
+\textit{heffers@umich.edu} % Your email address
+}
+\date{12/14/2022} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%     Preliminaries     %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%We start by defining plurisubharmonic functions (psh).  First we must define what subharmonic functions are.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Definition}  Let $D$ be a domain in $\mathbb{C}$.  A real valued function $u: D \rightarrow [-\infty, \infty)$ is called \textbf{subharmonic} if $u$ is upper semi-continuous and if it satisfies the subaveraging property, i.e. there is $\epsilon >0$ such that for all $r \in (0,\epsilon)$
+
+
+%$$u(z) \leq \frac{1}{2\pi} \int_{0}^{2\pi} u(z + re^{i\theta})\, d\theta .$$
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%\textbf{Definition}  Let $\Omega$ be a domain in $\mathbb{C}^n$.  A real valued function $u: \Omega \rightarrow [-\infty, \infty)$ is called \textbf{plurisubharmonic (psh)} if $u$ is upper semi-continuous and if for all $z\in \Omega$ and $a\in \mathbb{C}^n$, the function $v(\lambda) = u(z + a\lambda)$, $\lambda \in \mathbb{C}$, is subharmonic.  That is, restricted any complex line $L$, $u$ is subharmonic on $\Omega\cap L$.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Example:}  Given any holomorphic function $f$, $\log|f|$ is psh. 
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%We start by defining plurisubharmonic functions (psh).  First we must define what subharmonic functions are.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Definition}  Let $D$ be a domain in $\mathbb{C}$.  A real valued function $u: D \rightarrow [-\infty, \infty)$ is called \textbf{subharmonic} if $u$ is upper semi-continuous and if it satisfies the subaveraging property, i.e. there is $\epsilon >0$ such that for all $r \in (0,\epsilon)$
+
+
+%$$u(z) \leq \frac{1}{2\pi} \int_{0}^{2\pi} u(z + re^{i\theta})\, d\theta .$$
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{frame}
+%\frametitle{Preliminary Information}
+
+%\textbf{Definition}  Let $\Omega$ be a domain in $\mathbb{C}^n$.  A real valued function $u: \Omega \rightarrow [-\infty, \infty)$ is called \textbf{plurisubharmonic (psh)} if $u$ is upper semi-continuous and if for all $z\in \Omega$ and $a\in \mathbb{C}^n$, the function $v(\lambda) = u(z + a\lambda)$, $\lambda \in \mathbb{C}$, is subharmonic.  That is, restricted any complex line $L$, $u$ is subharmonic on $\Omega\cap L$.
+
+%\bigskip
+
+%\pause
+
+%\textbf{Example:}  Given any holomorphic function $f$, $\log|f|$ is psh. 
+
+
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Introduction}
+
+\begin{itemize}
+
+\item SpaceX is a company that launches many various payloads into orbit. They have rockets that can successfully land after the initial launch, allowing them to be reused, saving millions in costs of having to rebuilt new rockets each time.
+
+
+\bigskip
+
+\item We want to make a model that can help us determine if a new rocket will be able to land successfully based on the given data.
+
+\bigskip
+
+\item This presentation just shares visualizations, results, and insights. All processes/code can be found in the notebooks in the accompanying GitHub repository! Link provided at end for convenience.
+
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Methodology}
+
+\begin{itemize}
+
+\item Data is collected using SpaceX API and html scraping the SpaceX Wiki page. 
+
+\item Use SQL magic in python to organize and explore the data.
+
+\item Perform exploratory data analysis using visualizations.
+
+\item Perform predictive analysis using classification models and tuning hyperparameters.
+
+\item Deploy the model as a real time inference pipeline on Microsoft Azure Platform.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}
+
+\frametitle{EDA Insights}
+
+\begin{itemize}
+
+\item In the upcoming few slides we will see insights gained from the EDA. First we start with various visualizations to help us see the relationships between the different features.
+
+\item We see that the payload mass, the orbit type, and the year of the launch all impact the success rates of a landing.
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Flight Number vs Launch Site}
+
+\begin{figure}
+\includegraphics[width=12cm]{1}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Payload vs Launch Site}
+
+\begin{figure}
+\includegraphics[width=12cm]{2}
+\end{figure}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Success Rate vs Orbit Type}
+
+\begin{figure}
+\includegraphics[width=12cm]{3}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Flight Number vs Orbit Type}
+
+\begin{figure}
+\includegraphics[width=12cm]{4}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Payload vs Orbit Type}
+
+\begin{figure}
+\includegraphics[width=12cm]{5}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Success Rate Yearly Trend}
+
+\begin{figure}
+\includegraphics[width=12cm]{6}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Average Payload Mass}
+
+\begin{itemize}
+
+\item Now we will use SQL magic to do some numerical analysis! We start with finding the average payload mass over all the launches.
+
+\end{itemize}
+
+
+\begin{figure}
+\includegraphics[width=12cm]{10}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{First Successful Landing}
+
+
+\begin{figure}
+\includegraphics[width=12cm]{11}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Successful Landings With Payload Between 4000-6000kg}
+
+
+\begin{figure}
+\includegraphics[width=12cm]{12}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item Now we will construct some models. We start by using Azure Machine Learning Studio to create a pipeline for some quick no-code insights.
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=8cm]{pipeline}
+\end{figure}
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+\frametitle{Modeling}
+\begin{itemize}
+
+\item Checking the job output, it seems a classification model would be promising! However we will fine-tune this with some coding. Below is a sample of some of the outputs from the pipeline we constructed.
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=8cm]{modeloutputs}
+\end{figure}
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item We run several other models in addition to logistic regression, such as a decision tree, SVM, and K nearest neighbors. We see that each model has a very similar accuracy score of roughly $0.833$. Below is the confusion matrix corresponding to the SVM model.
+
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=8cm]{cmatrix}
+\end{figure}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item The full details  for the several different models can be found in the Hyperparameter tuning notebook.
+
+\bigskip
+
+\item Since all of the models are roughly the same accuracy, we will just stick with a logistic regression model. We create and run an MLflow script (contained in the MLflow notebook). 
+
+\bigskip
+
+\item After running the script we will register the model in Azure. Being satisfied with out model, we deploy it as a real-time inference endpoint.
+
+
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+Our registered model!
+
+\begin{figure}
+\includegraphics[width=11cm]{ModelJob}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+\begin{itemize}
+
+\item Our model is deployed for consumption, but let's finish by performing a sanity test.
+
+\bigskip
+
+\item From our insights, our gut instincts tell us that a rocket with a heavy payload going into high orbit (such as GTO) will be unlikely to have a successful landing. A rocket with a light payload going into a low orbit (say, LEO), should have a good chance of successfully being reused.
+
+\bigskip
+
+\item Recall that a label of $0$ means failure to land, and a label of $1$ means a successful landing.
+
+\end{itemize}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+We see the model predicts the following rocket (heavy payload, high orbit) will fail to land successfully.
+
+\begin{figure}
+\includegraphics[width=10cm]{failure}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Modeling}
+
+We see the model predicts the following rocket (light payload, low orbit) will indeed land successfully.
+
+\begin{figure}
+\includegraphics[width=10cm]{success}
+\end{figure}
+
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{The End!}
+
+Thanks for checking out my project! If you did not get this PDF from my GitHub, then the link to the corresponding repository containing all the code used is below:
+
+\bigskip
+\bigskip
+
+GitHub: https://github.com/TheProfessor712/IBMSpaceXProject712
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document} 
+
+
+%\begin{frame}
+%\frametitle{End}
+
+%\begin{thebibliography}{XXXXX}
+
+%\bibitem{C06} D. Coman, {\em Entire pluricomplex Green functions and Lelong numbers of projective currents}, Proc. Amer. Math. Soc. {\bf 134} (2006), 1927--1935.
+
+%\bibitem{CG09} D. Coman and V. Guedj, {\em Quasiplurisubharmonic Green functions}, J. Math. Pures Appl. (9) {\bf 92} (2009), 456--475.
+
+
+%\bibitem{CT15} D. Coman and T.T. Truong, {\em Geometric Properties of Upper Level Sets of Lelong Numbers on Projective Spaces}, Math. Ann. {\bf 361} (2015), 981--994.
+
+%\end{thebibliography}
+%\end{frame}
+
